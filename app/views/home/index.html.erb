@@ -1,30 +1,43 @@
+<body style="background: linear-gradient(to left, #2e2e2e 0%, black 100%); font-family: 'Verdana', sans-serif; color: white;">
 <div style="margin-left:10%; margin-right: 10%; width: auto;">
   <h1 style="font-size: 1.6rem; text-align: center; margin-top:50px;">
   Welcome to Audi Cars App - Backend site (on Render)
   </h1>
   <h3 style="font-size: 1.4rem; text-align: center;">E n d p o i n t s</h3>
   <ul style="margin-left: 140px;">
+    <span style="font-size: 1.1rem">CRUD of Users</span><br />
     <li style="font-size: 1.3rem">users List: 
       <a href="https://audi-cars-backend.onrender.com/api/v1/users">User List</a>
     </li>
-    <br />
     <li style="font-size: 1.1rem">Create new User: 
       Use Postman with POST and URL https://audi-cars-backend.onrender.com/api/v1/users
     </li>
-    <br />
     <li style="font-size: 1.1rem">Update existent User: 
-      Use Postman with POST (all columns) or PATCH (not all columns) and URL http://audi-cars-backend.onrender.com/api/v1/users/id
+      Use Postman with PATCH (all columns) and URL http://audi-cars-backend.onrender.com/api/v1/users/id
     </li>
-    <br />
     <li style="font-size: 1.1rem">Delete existent User: 
       Use Postman with DELETE and URL http://audi-cars-backend.onrender.com/api/v1/users/id
     </li>
+    <li style="font-size: 1.1rem">Show specific User: 
+      Use Postman with GET and URL http://audi-cars-backend.onrender.com/api/v1/users/id
+    </li>
     <br /><br />
     <span style="font-size: 1.1rem">CRUD of Cars (for a specific user)</span><br />
-    <li style="font-size: 1.1rem">List of Cars:</li>
-    <li style="font-size: 1.1rem">Create new Car:</li>
-    <li style="font-size: 1.1rem">Update existent Car:</li>
-    <li style="font-size: 1.1rem">Delete existent Car:</li>
+    <li style="font-size: 1.1rem">List of Cars - User_id 1:
+      <a href="https://audi-cars-backend.onrender.com/api/v1/users/1/cars">Car List</a>
+    </li>
+    <li style="font-size: 1.1rem">Create new Car:
+      Use Postman with POST and URL https://audi-cars-backend.onrender.com/api/v1/users/user_id/cars
+    </li>
+    <li style="font-size: 1.1rem">Update existent Car:
+      Use Postman with PATCH and URL https://audi-cars-backend.onrender.com/api/v1/users/user_id/cars/car_id
+    </li>
+    <li style="font-size: 1.1rem">Delete existent Car:
+      Use Postman with DELETE and URL https://audi-cars-backend.onrender.com/api/v1/users/user_id/cars/car_id
+    </li>
+    <li style="font-size: 1.1rem">Show specific Car:
+      Use Postman with GET and URL https://audi-cars-backend.onrender.com/api/v1/users/user_id/cars/car_id
+    </li>
   </ul>
 </div>
-<%# <h1>Welcome to Audi Website!</h1> %>
+</body>

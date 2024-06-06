@@ -29,7 +29,7 @@
 
 ## 📖 About the project - Audi Cars Reservations Backend App <a name="about-project"></a>
 
-The Ruby on Rails (RoR) template is a basic app for starting a project using this great tech stack. You can create a large list of different application from this starting repository. It includes the gem to connect with a PostgreSQL database, the gem Devise for user authentication, and the gem RSpec for unit testing. It is not set up yet to include JavaScript or any CSS frameworks or precompilers.
+This is a Ruby on Rails (RoR) backend application to be used for an Audi Cars Reservation Web Application. The frontend app will connect with API endpoints configured in this backend application. It will include the creation of users, CRUD operations of Cars, as well as CRUD operations for Reservations (for drive tests). The backend app includes the gem to connect with a PostgreSQL database, the gem Devise for user authentication, and the gem RSpec for unit testing. It is not set up yet to include JavaScript or any CSS framework or precompiler.
 
 
 ## 🛠 Built With <a name="built-with"></a>
@@ -44,7 +44,9 @@ The Ruby on Rails (RoR) template is a basic app for starting a project using thi
 
 ### Key Features <a name="key-features"></a>
 - **A repo set up with Ruby on Rails, linters, and some gems like Devise for authentication and pg for connecting with a PostgreSQL database.**
-- **Display here the list of key features of your project.**
+- **Create, Read, Update, and Delete Users.**
+- **Create, Read, Update, and Delete Cars.**
+- **Create, Read, Update, and Delete Reservations (drive tests of cars).**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -72,7 +74,7 @@ $ gem install rails
 
 ```sh
   cd my-folder
-  git clone https://github.com/your_exact_repo_url.git
+  git clone https://github.com/jcmunav63/audi_cars_backend.git
 ```
 - Remember that you will need to set up first the connection to the PostgreSQL database (username and password), and then ou will need to create the databases, before starting the development server.
 
@@ -141,22 +143,38 @@ npx stylelint "**/*.{css,scss}"
 
 ### Deployment
 
-This application is deployed on Remote_site_here. Visit the following link...
-https://newapp.remotesite.com/
+This Ruby on Rails Audi Cars Backend Application is deployed on Render. Visit the following link...
+https://audi-cars-backend.onrender.com/
 
 You can visit my presentation video at,,,
-[Demo video...](https://youtu.be/url_here)
+[Demo video (pending)...](https://youtu.be/url_here)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Developer's name here**
+👤 **Fatema Nazari**
 
-- GitHub: [@devname_zxz](https://github.com/devname_zxz)
-- Twitter: [@devname_zxz](https://twitter.com/devname_zxz)
-- LinkedIn: [@devname_zxz](https://www.linkedin.com/in/devname_zxz/)
+- GitHub: [@78fatemanazari](https://github.com/78fatemanazari)
+- Twitter: [@fati_nazari78](https://twitter.com/fati_nazari78)
+- LinkedIn: [@78fatemanazari](https://www.linkedin.com/in/78fatemanazari)
+
+👤 **Md. Rafiduzzaman Nahin**
+
+- GitHub: [@Rafiduzzaman](https://github.com/Rafiduzzaman)
+- LinkedIn: [@md-rafiduzzaman-nahin](https://www.linkedin.com/in/md-rafiduzzaman-nahin-7431ab1b4/)
+
+👤 **Mr. Francis Andoh**
+
+- GitHub: [@CobbyElsonfx](https://github.com/CobbyElsonfx)
+- LinkedIn: [@andoh-francis](https://www.linkedin.com/in/andoh-francis-133aa7245/)
+
+👤 **Juan Carlos Muñoz**
+
+- GitHub: [@jcmunav63](https://github.com/jcmunav63)
+- Twitter: [@jcmunav63](https://twitter.com/jcmunav63)
+- LinkedIn: [@juan-carlos-muñoz](https://www.linkedin.com/in/juan-carlos-mu%C3%B1oz-fullstackdev/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
