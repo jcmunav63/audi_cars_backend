@@ -52,7 +52,8 @@ module Api
 
       def car_params
         params.require(:car).permit(:model, :name, :description, :category, :price, :discount, :epa_fuel_economy,
-                                    :body_colors, :power_hp, :torque_lb_ft, :engine_type, :acceleration_sec_to_60mph)
+                                    :body_colors, :power_hp, :torque_lb_ft, :engine_type, :acceleration_sec_to_60mph,
+                                    :image_url, :thumbnail)
       end
     end
   end
