@@ -9,6 +9,13 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, only: [:index, :create, :update, :show, :destroy] do
         resources :cars, only: [:index, :create, :update, :show, :destroy]
+        resources :reservations, only: [:index, :create, :update, :show, :destroy]
+      end
+
+      resources :states, only: [:index] do
+        resources :cities, only: [:index] do
+          resources :reservations, only: [:index, :create, :destroy]
+        end
       end
     end
   end

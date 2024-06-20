@@ -37,6 +37,8 @@ module Api
       # GET /api/v1/users/:id SHOW ONE USER
       def show
         render json: @user, status: :ok
+      rescue ActiveRecord::RecordNotFound
+        render json: { error: 'User not found' }, status: :not_found
       end
 
       # DELETE /api/v1/users/:id DESTROY AN EXISTENT USER
