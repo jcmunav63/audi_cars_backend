@@ -32,6 +32,8 @@ module Api
         else
           render json: @user.errors, status: :unprocessable_entity
         end
+      rescue ActiveRecord::RecordNotFound
+        render json: { error: 'User not found' }, status: :not_found
       end
 
       # GET /api/v1/users/:id SHOW ONE USER
@@ -46,6 +48,8 @@ module Api
         @user = User.find(params[:id])
         @user.destroy
         head :no_content
+      rescue ActiveRecord::RecordNotFound
+        render json: { error: 'User not found' }, status: :not_found
       end
 
       private

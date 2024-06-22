@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :posts, only: [:create] do
-  end
+  # resources :posts, only: [:create] do
+  # end
 
   # get 'home/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users, only: [:index, :create, :update, :show, :destroy] do
-        resources :cars, only: [:index, :create, :update, :show, :destroy]
-        resources :reservations, only: [:index, :create, :update, :show, :destroy]
+        resources :cars, only: [:index, :create, :update, :show, :destroy] do
+          resources :reservations, only: [:index, :create, :update, :show, :destroy]
+        end
+        resources :reservations, only: [:index]
       end
 
       resources :states, only: [:index] do

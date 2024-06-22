@@ -35,11 +35,13 @@ module Api
       # DELETE /api/v1/users/:user_id/cars/:car_id/reservations/:id
       def destroy
         @reservation.destroy
+      rescue ActiveRecord::RecordNotFound
+        render json: { error: 'Reservation not found' }, status: :not_found
       end
 
-      # GET /api/v1/users/:user_id/cars/:id
+      # GET /api/v1/users/:user_id/cars/:car_id/reservations/:id
       def show
-        render json: @car, status: :ok
+        render json: @reservation, status: :ok
       rescue ActiveRecord::RecordNotFound
         render json: { error: 'Reservation not found' }, status: :not_found
       end
@@ -52,6 +54,8 @@ module Api
 
       def set_car
         @car = @user.cars.find(params[:car_id])
+      rescue ActiveRecord::RecordNotFound
+        render json: { error: 'Car not found' }, status: :not_found
       end
 
       def set_reservation
