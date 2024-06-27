@@ -13,6 +13,8 @@ module Api
       # GET /api/v1/users/:user_id/cars/:id
       def show
         render json: @car
+      rescue ActiveRecord::RecordNotFound
+        render json: { error: 'Car not found' }, status: :not_found
       end
 
       # POST /api/v1/users/:user_id/cars
@@ -33,11 +35,15 @@ module Api
         else
           render json: @car.errors, status: :unprocessable_entity
         end
+      rescue ActiveRecord::RecordNotFound
+        render json: { error: 'Car not found' }, status: :not_found
       end
 
       # DELETE /api/v1/users/:user_id/cars/:id
       def destroy
         @car.destroy
+      rescue ActiveRecord::RecordNotFound
+        render json: { error: 'Car not found' }, status: :not_found
       end
 
       private

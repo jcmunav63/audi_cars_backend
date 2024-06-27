@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_04_045130) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_20_150744) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -35,6 +35,44 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_04_045130) do
     t.index ["user_id"], name: "index_cars_on_user_id"
   end
 
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
+    t.bigint "state_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["state_id"], name: "index_cities_on_state_id"
+  end
+
+  create_table "countries", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "car_id", null: false
+    t.datetime "date_reserved"
+    t.date "reservation_date"
+    t.time "reservation_time"
+    t.string "model"
+    t.string "name"
+    t.bigint "city_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["car_id"], name: "index_reservations_on_car_id"
+    t.index ["city_id"], name: "index_reservations_on_city_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
+  create_table "states", force: :cascade do |t|
+    t.string "name"
+    t.bigint "country_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["country_id"], name: "index_states_on_country_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "name"
@@ -45,4 +83,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_04_045130) do
   end
 
   add_foreign_key "cars", "users"
+  add_foreign_key "cities", "states"
+  add_foreign_key "reservations", "cars"
+  add_foreign_key "reservations", "cities"
+  add_foreign_key "reservations", "users"
+  add_foreign_key "states", "countries"
 end

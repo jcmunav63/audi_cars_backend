@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   # Associations
   has_many :cars, dependent: :destroy
+  has_many :reservations, dependent: :destroy
 
   # Ensure the email is unique and follows a valid email format
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
